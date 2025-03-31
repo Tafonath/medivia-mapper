@@ -1312,6 +1312,7 @@ map.on("click", function (e) {
     o = Math.floor(n.x),
     s = Math.floor(n.y)
     drawRectangle({'x':map.unproject([o, s], 0).lng , 'y':map.unproject([o, s], 0).lat});
+    navigator.clipboard.writeText("https://tafonath.github.io/medivia-mapper/?x="+map.unproject([o, s], 0).lng.toString()+"&y="+map.unproject([o, s], 0).lat.toString()+"&z="+floorSlider.noUiSlider.get().toString()+"&zoom="+map.getZoom().toString());
 });
 
 function jumpToRectangle(){
